@@ -1,10 +1,17 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
 body {
 	font-family: 'Raleway', sans-serif;
 }
 
-img {
-	max-width: 100%;
-}
+.back2Top {display: none;}
+
+img {max-width: 100%}
 
 $c1: #f6781e;
 $c2: #2F2E41;
@@ -213,6 +220,136 @@ $c2: #2F2E41;
 		}
 		&:active {
 			transform: translateY(1px)
+		}
+	}
+}
+
+.auth {
+	height: 100vh;
+	display: grid;
+	form {
+		max-width: 100%;
+		min-width: 600px;
+		margin: auto;
+		box-shadow: 0px 6px 18px rgb(0 0 0 / 9%);
+		padding: 30px 60px;
+		border-radius: 8px;
+
+		h1 {
+			text-align: center;
+			font-weight: 900;
+			color: $c2;
+			margin-top: 30px;
+		}
+		p {
+			font-weight: 600;
+			color: $c2;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.input-single {
+	&+& {margin-top: 30px;}
+	label {
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $c2;
+		margin-bottom: 6px;
+		& + a {
+			font-size: 13px;
+			font-weight: 600;
+			text-decoration: none;
+			color: lighten($c1, 15%);
+			transition: all .2s ease;
+			&:hover {
+				color: $c1;
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	i {
+		width: 50px;
+		height: 45px;
+		border-radius: 4px 0 0 4px;
+		background: lighten($c1, 25%);
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		transition: all .2s ease;
+		&:has(~ input:focus) {
+			background: $c1;
+		}
+	}
+	
+	input,
+	.select2-container {
+		width: calc(100% - 50px) !important;
+		height: 45px;
+		border: 2px solid lighten($c1, 25%);
+		border-left: none !important;
+		border-radius: 0 4px 4px 0;
+		padding: 5px 15px;
+
+		transition: all .2s ease;
+		&:focus {
+			border: 2px solid $c1;
+		}
+	}
+
+	.select2-container--default {
+		.select2-selection--single {
+			border: none;
+			padding: 0;
+			.select2-selection__arrow {
+				top: 6px;
+				right: 6px;
+			}
+
+			.select2-selection__rendered {
+				line-height: 31px;
+			}
+		}
+	}
+}
+.auth-footer {
+	&>a {
+		display: block;
+		padding: 15px 0;
+		border-radius: 8px;
+		text-decoration: none;
+		text-align: center;
+		margin: 40px 0;
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #fff;
+		background: $c1;
+		transition: all .3s ease;
+		&:hover {
+			background: lighten($c1, 5%);
+		}
+	}
+
+	&>p {
+		font-size: 14px;
+		margin-top: 15px;
+		padding-top: 30px;
+		border-top: 1px solid #eee;
+		a {
+			font-weight: 600;
+			text-decoration: none;
+			color: lighten($c1, 15%);
+			transition: all .2s ease;
+			&:hover {
+				color: $c1;
+				text-decoration: underline;
+			}
 		}
 	}
 }
