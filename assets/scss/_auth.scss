@@ -1,0 +1,207 @@
+@use 'reset' as *;
+
+.auth {
+	height: 100vh;
+	display: grid;
+	form {
+		max-width: 100%;
+		min-width: 600px;
+		margin: auto;
+		background: #fff;
+		box-shadow: 0px 6px 18px rgb(0 0 0 / 9%);
+		padding: 30px 60px;
+		border-radius: 8px;
+		position: relative;
+		isolation: isolate;
+		z-index: 3;
+		&::before {
+			position: absolute;
+			content: '';
+			inset: 0;
+			background: rgb(255,227,208);
+			background: -moz-linear-gradient(207deg, rgba(255,227,208,1) 0%, rgba(255,255,255,1) 51%);
+			background: -webkit-linear-gradient(207deg, rgba(255,227,208,1) 0%, rgba(255,255,255,1) 51%);
+			background: linear-gradient(207deg, rgba(255,227,208,1) 0%, rgba(255,255,255,1) 51%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffe3d0",endColorstr="#ffffff",GradientType=1);
+			border-radius: 8px;
+			z-index: -1;
+		}
+		h1 {
+			text-align: center;
+			font-weight: 900;
+			color: $c2;
+			margin-top: 30px;
+			position: relative;
+			padding-bottom: 30px;
+			&::before {
+				position: absolute;
+				content: '';
+				width: calc(100% + 120px);
+				height: 5px;
+				background: lighten($c1, 45%);
+				bottom: 0;
+				left: -60px;
+			}
+		}
+		p {
+			font-weight: 600;
+			color: $c2;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.input-single {
+	&+& {margin-top: 30px;}
+	label {
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $c2;
+		margin-bottom: 6px;
+		& + a {
+			font-size: 13px;
+			font-weight: 600;
+			text-decoration: none;
+			color: lighten($c1, 15%);
+			transition: all .2s ease;
+			&:hover {
+				color: $c1;
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	i {
+		width: 50px;
+		height: 45px;
+		border-radius: 4px 0 0 4px;
+		background: lighten($c1, 25%);
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		transition: all .2s ease;
+		&:has(~ input:focus) {
+			background: $c1;
+		}
+	}
+	
+	input,
+	.select2-container {
+		width: calc(100% - 50px) !important;
+		height: 45px;
+		border: 2px solid lighten($c1, 25%);
+		border-left: none !important;
+		border-radius: 0 4px 4px 0;
+		padding: 5px 15px;
+		
+		transition: all .2s ease;
+		&:focus {
+			border: 2px solid $c1;
+		}
+	}
+	
+	.select2-container--default {
+		.select2-selection--single {
+			.select2-selection__arrow {
+				top: 6px;
+				right: 6px;
+			}
+			
+			.select2-selection__rendered {
+				line-height: 31px;
+			}
+		}
+	}
+}
+
+.select2-container--default {
+	.select2-selection--single {
+		border: none;
+		padding: 0;
+	}
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable[aria-selected="true"] {
+	background-color: $c1 !important;
+}
+
+.auth-footer {
+	&>a {
+		@extend .theme-btn;
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+		margin: 30px 0;
+	}
+	
+	&>p {
+		font-size: 14px;
+		margin-top: 15px;
+		padding-top: 30px;
+		border-top: 1px solid #eee;
+		a {
+			font-weight: 600;
+			text-decoration: none;
+			color: lighten($c1, 15%);
+			transition: all .2s ease;
+			&:hover {
+				color: $c1;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.auth-img-1,
+.auth-img-2 {
+	position: absolute;
+	width: 200px;
+	z-index: -2;
+}
+
+.auth-img-1 {
+	top: 0;
+	left: 0;
+	transform: translate(-70%, -50%,);
+	opacity: 0.5;
+}
+.auth-img-2 {
+	bottom: 0;
+	right: 0;
+	transform: translate(90%, 100px,);
+	opacity: 0.3;
+}
+
+.input-box {
+	.form-check-input {
+		width: 1.2em;
+		height: 1.2em;
+		
+		&:focus,
+		&:active {
+			background-color: rgba(#000, .05);
+			border-color: lighten($c1, 40%);
+			box-shadow: none;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+		}
+		&:checked {
+			background-color: $c1;
+			border-color: $c1;
+		}
+	}
+	.form-switch {
+		margin-bottom: 10px;
+		.form-check-input {
+			width: 2.4em;
+		}
+	}
+	label {margin: 5px 0 0 5px !important;}
+	.confettis {display: none;}
+	.preferences:has(#confetti:checked) + .confettis {display: flex;}
+}

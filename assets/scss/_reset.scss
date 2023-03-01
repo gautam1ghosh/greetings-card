@@ -1,0 +1,148 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+$font-1: 'Raleway', sans-serif;
+$c1: #f6781e;
+$c2: #2F2E41;
+
+body::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+    background-color: lighten($c1, 20%);
+}
+
+body::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
+    background-color: $c1;
+    border-radius: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ol,
+ul,
+li {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6, figure,p,nav {margin: 0}
+
+input,
+textarea {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    resize: none;
+    background-color: transparent;
+}
+
+input:focus,
+textarea:focus {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+textarea::-moz-placeholder,
+input::-moz-placeholder {
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+textarea::placeholder,
+input::placeholder {
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    outline: 0 !important;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: $c1;
+    text-shadow: none;
+}
+
+::selection {
+    background: $c1;
+    color: #fff;
+    text-shadow: none;
+}
+
+body {
+	font-family: $font-1;
+	background: lighten($c1, 45%);
+}
+
+.page-wrapper {
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+}
+
+.back2Top {display: none;}
+
+
+.fw-3 {font-weight: 300;}
+.fw-4 {font-weight: 400;}
+.fw-6 {font-weight: 600;}
+.fw-7 {font-weight: 700;}
+.fw-8 {font-weight: 800;}
+
+.theme-btn {
+	display: inline-block;
+	padding: 15px 35px;
+	border-radius: 6px;
+	background: $c1;
+	color: #fff !important;
+	font-size: 15px;
+	font-weight: 600;
+	text-decoration: none;
+	margin-top: 15px;
+	box-shadow: 4px 4px 0 lighten($c1, 30%);
+	transition: all .1s ease;
+	&:hover {
+		box-shadow: 0 0 0 lighten($c1, 30%);
+	}
+	&:active {
+		transform: translateY(1px)
+	}
+}
