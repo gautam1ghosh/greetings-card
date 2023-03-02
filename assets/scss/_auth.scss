@@ -5,7 +5,7 @@
 	display: grid;
 	form {
 		max-width: 100%;
-		min-width: 600px;
+		width: 600px;
 		margin: auto;
 		background: #fff;
 		box-shadow: 0px 6px 18px rgb(0 0 0 / 9%);
@@ -63,12 +63,11 @@
 		& + a {
 			font-size: 13px;
 			font-weight: 600;
-			text-decoration: none;
-			color: lighten($c1, 15%);
+			text-decoration: underline;
+			color: darken($c1, 5%);
 			transition: all .2s ease;
 			&:hover {
 				color: $c1;
-				text-decoration: underline;
 			}
 		}
 	}
@@ -147,12 +146,11 @@
 		border-top: 1px solid #eee;
 		a {
 			font-weight: 600;
-			text-decoration: none;
-			color: lighten($c1, 15%);
+			text-decoration: underline;
+			color: darken($c1, 5%);
 			transition: all .2s ease;
 			&:hover {
 				color: $c1;
-				text-decoration: underline;
 			}
 		}
 	}
