@@ -1,0 +1,44 @@
+@use 'reset' as *;
+
+.intro-section {
+	padding: 50px 0;
+	@media(min-width: 992px) {
+		padding: 80px 0;
+	}
+	@media(min-width: 1400px) {
+		padding: 120px 0;
+	}
+	.section-header {
+		margin: 0 auto 50px;
+		p {
+			font-size: 14px;
+			line-height: 22px;
+			font-weight: 500;
+			font-weight: 300;
+			&+p {margin-top: 15px;}
+			@media(min-width: 576px) {font-size: 15px;line-height: 24px;}
+			@media(min-width: 992px) {font-size: 16px;line-height: 26px;}
+			@media(min-width: 1200px) {font-size: 18px;line-height: 32px;}
+		}
+		@media(min-width: 576px) {
+			width: 90%;
+		}
+		@media(min-width: 768px) {
+			width: 60%;
+		}
+		@media(min-width: 992px) {
+			width: 100%;
+			margin-bottom: 0;
+		}
+	}
+
+	figure {
+		img {
+			width: auto;
+			display: block;
+			margin: 0 auto;
+			@media(min-width: 576px) {width: 500px;}
+			@media(min-width: 992px) {width: auto;}
+		}
+	}
+}

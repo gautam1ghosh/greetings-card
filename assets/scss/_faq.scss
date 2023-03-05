@@ -1,0 +1,155 @@
+@use 'reset' as *;
+/* faq-section start */
+.faq-section .section-header {
+    margin: 30px 0;
+    @media(min-width: 768px) {
+        margin: 50px 0;
+    }
+    @media(min-width: 1200px) {
+        margin: 155px 0 50px;
+    }
+}
+.faq-section figure {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 60%;
+    display: block;
+    margin: 50px auto 0;
+    @media(min-width: 1200px) {
+        width: auto;
+        img {
+            width: auto;
+            margin: 0;
+        }
+    }
+}
+
+.faq-container {
+    height: auto;
+    padding: 0 12px 12px 0;
+    .simplebar-scrollbar {
+        top: 1px;
+        left: 1px;
+    }
+    
+    .simplebar-scrollbar::before {
+        @media(min-width: 1200px) {
+            background-color: rgba(#fff, .6);
+            width: 4px;
+            border-radius: 5px;
+        }
+    }
+    
+    .simplebar-track.simplebar-vertical {
+        width: 10px;
+        height: calc(100% - 40px);
+        top: 20px;
+        border-radius: 5px;
+        background: lighten($c2, 30%);
+    }
+    
+    .simplebar-scrollbar.simplebar-visible:before {opacity: 1;}
+    @media(min-width: 992px) {
+        padding: 0 60px 30px 0;
+    }
+    @media(min-width: 1200px) {
+        height: 530px;
+    }
+}
+
+#faq-wraper {
+    .card {
+        border: none;
+        border-radius: 40px;
+        background: lighten($c1, 40%);
+        box-shadow: 6px 6px 0 lighten($c2, 30%);
+    }
+    
+    .card + .card {margin-top: 30px;}
+    
+    .card-header {
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+    
+    .card-body {padding: 0 30px 30px}
+}
+
+.faq_title > a::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.faq_title > a {
+    padding: 15px 15px 15px 25px;
+    display: block;
+    @media(min-width: 576px) {
+        padding: 20px 20px 20px 30px;
+    }
+}
+
+.faq_title > a > span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    width: calc(100% - 50px);
+    float: left;
+    display: block;
+    color: $c2;
+    margin-top: 5px;
+    @media(min-width: 576px) {
+        font-size: 18px;
+        line-height: 36px;
+    }
+}
+
+.faq_title > a > i {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    line-height: 40px;
+    border-radius: 100%;
+    display: block;
+    float: right;
+    color: #fff;
+    text-align: center;
+    transition: all .3s ease;
+    background: $c1;
+    background: -moz-linear-gradient(top, $c1 0%, lighten($c1,15%) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, $c1), color-stop(100%, lighten($c1,15%)));
+    background: -webkit-linear-gradient(top, $c1 0%, lighten($c1,15%) 100%);
+    background: -o-linear-gradient(top, $c1 0%, lighten($c1,15%) 100%);
+    background: -ms-linear-gradient(top, $c1 0%, lighten($c1,15%) 100%);
+    background: linear-gradient(to bottom, $c1 0%, lighten($c1,15%) 100%);
+    @media(min-width: 576px) {
+        width: 45px;
+        height: 45px;
+        line-height: 46px;
+        font-size: 22px;
+    }
+}
+.faq_title > a[aria-expanded="false"] > i {animation: faq-pulse-back 1s 1 both}   
+
+.faq_title > a[aria-expanded="true"] > i {
+    transform-origin: center center;
+    animation: faq-pulse 1s 1 both;
+}
+
+@keyframes faq-pulse {
+    from {transform: scale3d(1, 1, 1) rotate(0deg)}
+    50% {transform: scale3d(1.2, 1.2, 1.2) rotate(90deg)}
+    to {transform: scale3d(1, 1, 1) rotate(180deg)}
+}
+
+@keyframes faq-pulse-back {
+    from {transform: scale3d(1, 1, 1) rotate(180deg);}
+    50% {transform: scale3d(1.2, 1.2, 1.2) rotate(-135deg);}
+    to {transform: scale3d(1, 1, 1) rotate(0deg);}
+}
+/* faq-section end */

@@ -1,5 +1,6 @@
 ## #Live Pages
 
+- [Home](https://tanimmahbub.github.io/greetings-card/index.html)
 - [Three steps Form](https://tanimmahbub.github.io/greetings-card/card-form.html)
 - [Register](https://tanimmahbub.github.io/greetings-card/signup.html)
 - [Login](https://tanimmahbub.github.io/greetings-card/login.html)
