@@ -3,6 +3,20 @@
 .intro-section {
 	position: relative;
 	padding: 50px 0;
+	background: url(../img/bg/02.png) repeat-x left 0 / contain;
+	position: relative;
+	isolation: isolate;
+	z-index: 1;
+	&::before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(lighten($c1, 45%), .8);
+		z-index: -1;
+	}
 	@media(min-width: 992px) {
 		padding: 80px 0;
 	}
@@ -10,6 +24,7 @@
 		padding: 120px 0;
 	}
 	.section-header {
+		background: lighten($c1, 45%);
 		margin: 0 auto 50px;
 		p {
 			font-size: 14px;
@@ -41,5 +56,56 @@
 			@media(min-width: 576px) {width: 500px;}
 			@media(min-width: 992px) {width: auto;}
 		}
+	}
+}
+
+.key-features {
+	padding: 50px 0;
+	@media(min-width: 992px) {
+		padding: 80px 0;
+	}
+	@media(min-width: 1400px) {
+		padding: 120px 0;
+	}
+	.feature-box {
+		&>span {
+			width: 150px;
+			height: 150px;
+			background: lighten($c1, 45%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 16px;
+			box-shadow: 0 0 0 4px $c2, 8px 8px 0 $c2;
+			transition: all .3s ease;
+		}
+		&:hover {
+			&>span {box-shadow: 0 0 0 4px $c2, 0 8px 0 $c2;}
+		}
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 30px;
+		h4 {
+			font-size: 15px;
+			font-weight: 600;
+			color: $c2;
+			margin-top: 20px;
+			@media(min-width: 576px) {
+				font-size: 16px;
+			}
+			@media(min-width: 768px) {
+				font-size: 18px;
+				font-weight: 300;
+				margin-bottom: 50px;
+			}
+			@media(min-width: 992px) {
+				font-size: 20px;
+			}
+		}
+	}
+	
+	@media(max-width: 379px) {
+		.col-6 {width: 100%;}
 	}
 }

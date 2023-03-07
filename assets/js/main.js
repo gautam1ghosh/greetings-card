@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
         bs4Accordion();
         loadMore();
         aosActivation();
-        msgBox()
+        msgBox();
     })(jQuery);
 });
 
